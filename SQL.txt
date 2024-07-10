@@ -1,0 +1,945 @@
+TYPES OF APPLICATION
+---------------------
+1.STAND ALONE APPLICATION
+2.WEB APPLICATION
+3.MOBILE APPLICATION
+---------------------
+1.STAND ALONE APPLICATION:
+--------------------------
+EXAMPLE: NOTEPAD,CALCULATOR,PAINT
+1.AN APPLICATION WHICH RUNS IN OFFLINE
+2.DB IS NOT  REQUIRED
+3.LOCAL STORAGE IS REQUIRED
+4.INSTALLATION IS REQUIRED
+----------------------------------------------------
+2.WEB APPLICATION
+------------------
+EXAMPLE:FLIPKART,AMAZON
+1.AN APPLICATION WHICH RUNS IN ONLINE
+2.DB IS REQUIRED
+3.NO INSTALLATION IS REQUIRED
+-----------------------------------------------------
+3.MOBILE APPLICATION
+---------------------
+EXAMPLE:EMAIL
+1.AN APPLICATION WHICH RUNS IN BOTH ONLINE/OFFLINE
+2.WHEN IT RUNS IN ONLINE IT USES DB
+3.WHEN IT RUNS IN OFFLINE IT USES LOCAL STORAGE
+
+----------------------------------------------------------------------------------------
+DATA--->RAWFACT/UNPROCESSED INFORMATION
+IT IS RAWFACT WHICH DEFINES THE ATTRIBUTES OF AN ENTITY
+ATTRIBUTES--->POROPERTIES
+ENTITY------->OBJECT
+----------------------------------------------------------------------------------------
+TYPES OF DATA
+--------------
+1.STRUCTURED DATA:
+--IT IS AN ORGANISED COLLECTION OF DATA
+--IT STORES DATA IN THE FORM OF TABLE(ROWS AND COLUMNS)
+--FETCHING IS  EASY
+--EXCEL
+
+2.UNSTRUCTURED DATA:
+--IT DOESN'T HAVE ANY STRUCTURE.
+--FECTCHING IS NOT EASY
+--IMAGE,VIDEO,AUDIO
+
+3.SEMISTRUCTURED DATA:
+
+COLUMNAR
+DOCUMENT
+KEY-VALUE
+GRAPH
+---------------------------------------------------------------------------------------
+DATABASE
+--------
+IT IS AN ORGANISED COLLECTION DATA STORED IN A SYSTEM IS CALLED AS DATABASE
+
+TYPES OF DATABASE
+-----------------
+1.RELATIONAL DATABASE
+IF IT HAS RELATION BETWEEN THE TABLE IT IS RELATIONAL DATABASE
+
+2.NON RELATIONAL DATABASE
+IT DOESNT HAVE ANY RELATION
+---------------------------------------------------------------------------------------
+DBMS
+----
+--DATABASE MANAGEMENT SYSTEM
+--IT STORED OBJECT IN THE TYPE OF FILE
+--IT USES QUERY LANGUAGE
+
+RDBMS
+-----
+--RELATIONAL DATABASE MANAGEMENT SYSTEM
+--IT STORES THE OBJECT IN THE FORM OF TABLE.
+--IT USES STRUCTURED  QUERY LANGUAGE
+LANGUAGE:SQL
+PLATFORM:MYSQL,ORACLESQL,SQLLITE,SQLSERVER
+
+NRDBMS
+------
+NON RELATIONAL DATABASE MANAGEMNET SYSTEM
+--COLUMNAR-->CASANDRA
+--DOCUMENT-->MONGODB
+--KEY-VALUE-->REDIS
+--GRAPH------>NEO4J
+
+-----------------------------------------------------------------------------------------
+MYSQL INSTALLATION
+------------------
+=========================================================================================
+SQL HISTORY
+----------
+1970--->PUBLISHED THEORETICAL PAPER
+2 IBM ENGINEERS--->SEQUEL(STRUCTURED ENGLISH QUERY LANGUAGE)
+-----------------------------------------------------------------------------------
+IN TABLE
+WE CALL ROWS AS RECORDS
+WE CALL COLUMNS AS ATTRIBUTES OR FIELDS
+CELL IS SMALLEST UNIT IN THE TABLE
+
+-----------------------------------------------------------------------------------
+SQL COMMENDS
+------------
+1.DDL(DATA DEFINITION LANGUAGE)
+TO DEFINE,MANAGE AND MODIFY THE STRUCTURE OF THE DATABASE OR TABLE
+--CREATE: DATABASE,TABLE
+--DROP:DATABASE,TABLE
+--ALTER:TABLE
+--TRUNCATE:TABLE
+--RENAME:TABLE
+
+2.DML(DATA MANIPULATION LANGUAGE)
+IT IS USED TO MANIPULATE DATA IN THE DATABASE
+--INSERT--> TO INSERT A DATA INTO A TABLE
+--UPDATE-->TO UPDATE THE EXISISTING DATA IN A TABLE
+--DELETE--> TO DELETE A DATA IN A TABLE.
+3.DQL(DATA QUERY LANGUAGE)
+--SELECT: TO SELECT THE DATA
+4.DCL(DATA CONTROL LANGUAGE)
+IT IS USED TO CONTROL ACCESS TO A DATABASE AND MANAGE PRIVILIEGE
+--GRANT
+--REVOKE
+--DENY(MYSQL DOESN'T SUPPORT)
+5.TCL(TRANSACTION CONTROL LANGUAGE)
+IT IS USED MANAGE THE TRANSACTION ENSURING THE DATA CONSISTENCY AND DURABILITY
+--COMMIT
+--ROLLBACK
+--SAVEPOINT
+----------------------------------------------
+JAVA ,PYTHON--->CASE SENSITIVE
+String s="hi"
+String S=" bye "
+SQL------->CASE INSENSITIVE--->keywords
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DDL
+---
+1.CREATE-->TABLE,DATABASE
+2.DROP-->TABLE,DB---> STRUCTURE AND RECORDS DELETED 
+3. ALTER-->ADD--->ADD COLUMN
+        -->MODIFY--->CHANGE THE DATATYPE OF THE COLUMN.
+        -->CHANGE--->CHANGE THE COLUMN NAME.
+        -->DROP---->DROP THE PARTICULAR COLUMN.
+       
+4.TRUNCATE
+DELETE THE RECORDS IN THE TABLE.DOESN'T AFFECT THE STRUCTURE.
+
+SHOW DATABASES; 
+CREATE DATABASE CUSTOMER;
+DROP DATABASE CUSTOMER;
+
+COMMENTS
+--------
+1.SINGLE LINE COMMENT  -- THIS IS COMMENT
+2.MULTI LINE COMMENT  /* THIS
+                         IS
+                         A
+                       COMMENT  */
+3.INLINE COMMENT     /*   HCBAI  */
+
+
+
+TABLE
+------
+SYNTAX
+-------
+CREATE TABLE TABLE-NAME(FIELD_NAME1 DATATYPE,FIELD_NAME2 DATATYPE);
+
+DATATYPES IN SQL
+----------------
+1.STRING
+   CHAR---->FIXED MEMORY LENGTH ALLOCATION
+       ---->0 TO 255 CHAR
+       ---->CHAR(SIZE)---DEFAULT VALUE FOR CHAR IS 1
+NAME   CHAR(10)
+
+
+   VARCHAR--->DYNAMIC MEMORY LENGTH ALLOCATION
+          --->0 TO 65535 SIZE
+          --->VARCHAR(SIZE)
+
+NAME    VARCHAR(10)
+------------------------------------------------------------------------------------
+2.NUMBER
+   INTEGER/int--->WHOLE NUMBER
+   DOUBLE---->DOUBLE(SIZE,d)
+         ----> SALARY   DOUBLE(5,2)-->10000.1,10000.12,10000
+   FLOAT--->DEPRECATED(NOT IN USE)
+----------------------------------------------------------------------
+3.DATETIME 
+ DATE  'YYYY-MM-DD'
+ DATEANDTIME   'YYYY-MM-DD HH:MM:SS'
+ TIME  'HH:MM:SS'
+ YEAR   'YYYY'                      
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+DDL
+___
+CREATE TABLE CUSTOMER( C_ID INTEGER,NAME VARCHAR(10),AGE INTEGER); 
+ALTER  TABLE CUSTOMER ADD(CITY VARCHAR(10));
+ALTER  TABLE CUSTOMER MODIFY CITY CHAR(10);
+ALTER  TABLE CUSTOMER CHANGE CITY PLACE CHAR(10);
+ALTER  TABLE CUSTOMER DROP PLACE;
+TRUNCATE TABLE CUSTOMER;
+RENAME TABLE customer TO custom;
+
+INSERT INTO CUSTOMER VALUES(1,'LOKI',28),(2,'VIKI',25),(3,'KIKI',28);
+SELECT * FROM CUSTOMER;
+
+-----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+DML
+___
+
+CREATE TABLE student(
+	id int,
+	name varchar(20),
+);
+
+INSERT INTO STUDENT (id,name) VALUES (101,'Ravi');
+INSERT INTO STUDENT (id,name) VALUES (102,'Vijay'),(103,'Hari'),(104,'Siva');
+INSERT INTO STUDENT VALUES (105,'Surya');
+INSERT INTO STUDENT (name, id) VALUES ('Vikram',106);
+INSERT INTO STUDENT (id) VALUES (107);
+Upadte Datas into Table
+________
+UPDATE student SET name = 'kamal';
+UPDATE student SET name = 'kamal' WHERE id = 107;
+UPDATE student SET name = 'kamal' WHERE name = 'vijay';
+Delete Datas From Table
+_________
+DELETE FROM student WHERE id = 107;
+DELETE FROM student;
+
+Truncate the Table
+_______
+
+TRUNCATE TABLE student;
+
+-------------------------------------
+WHERE - CLAUSE
+___  
+Component of SQL statement that provides additional instructions or conditions for a statement excution
+
+WHERE - It is used to spcify the condition
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constrains
+_________________
+
+It is a condition applicable  on a field
+Used to limit type  of  data that can go into a table
+It ensures data Accuracy and reliability
+
+
+
+TYPES
+_____
+
+NOT NULL     -- It doesnot take null value   EG:NAME
+
+UNIQUE       -- It doesnot allow dublicate values   Eg:Email  allow only unique values
+
+PRIMARY KEY  --  Comnination of not null and unique  only one primary key allowed table                   Eg:ID
+
+FOREIGN KEY  -- It is a key used to refer to a primary key in a another table in order to                 combine two tables  Eg:Id
+                more than one foreign key in a table
+
+CHECK        -- (condition) checks the data based on the condition 
+
+Default      -- default value --> if no value is given it will take default value
+
+
+AUTO_INCREMENT -- 1,2,3,4
+
+
+
+                              
+STUDENT                         DEPT                            STAFF
+STUD-ID---->PK                  DEPT_ID--PK                   STAFF_ID--PK
+STUD-NAME-->NN                  DEPT_NAME--U                  STAFF_NAME--NN	
+DEPT-ID---->FK 
+----------------------------------------------------------------------------------------
+Create Constrains
+______________________
+
+Syntax
+-------
+
+CREATE TABLE table_name(
+  Field_name1  Datatype CONSTRAINS,
+  Field_name2  Datatype CONSTRAINS,
+  Field_name3  Datatype CONSTRAINS,
+
+);
+
+
+
+
+use demo;
+create table depeartment(
+    id int primary key auto_increment,
+    name varchar(20) not null unique
+)auto_increment = 101;
+
+create table student(
+    id int primary key auto_increment,
+    name varchar(15) not null,
+    email varchar(20) unique,
+    dept_id int,
+    foreign key (dept_id) references depeartment(id),
+    age int check (age>=18),
+    phone_no int default 000000
+);
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DCL
+____
+Syntax:
+lokeshwari--->insert
+
+GRANT [SQLCOMMANDS] ON database_name.table_name TO 'username@hostname' IDENTIFIED BY 'password';
+
+REVOKE [SQLCOMMANDS] ON database_name.table_name FROM 'username@hostname';
+
+Commands:
+
+GRANT INSERT, SELECT ON demo.student TO 'loki@localhost' IDENTIFIED BY 'root';
+
+REVOKE INSERT ON demo.student FROM 'loki@localhost';
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+TCL: Transaction Control Language
+______________________________________
+
+COMMIT   -- save
+ROLLBACK -- 
+SAVEPOIT -- cheack point
+
+
+===================================
+
+
+DQL       (doesn't affect orginal data)
+-------
+select name,population from city;  --> Vertical filtering
+
+select * from city where countrycode = 'IND';  --> horizantal filtering
+
+select name,population from city where countrycode = 'IND'; -->both
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DCL
+----
+COMMIT
+ROLLBACK
+SAVEPOINT
+
+
+mysql commend line:                                                  
+___________________
+
+show databases;
+use demo;
+show tables;
+select * from student;
+insert into student valiues(1, 'raj');
+commit;
+
+
+mysql workbench
+___________________
+
+select from student;
+insert into student values(2,'manoj');
+commit;
+
+
+
+RollBack
+___________
+
+
+insert into student values(1,'manoj'),(2,'ajay'),(3,'meenu');
+commit;
+insert into student values(1,'manoj'),(2,'ajay'),(3,'meenu');
+rollback;
+
+
+delete from student;
+rollback;
+
+
+truncate from student;
+rollback;
+
+
+Save point
+_____________
+
+
+insert into student values(1,'manoj'),(2,'ajay'),(3,'meenu');
+savepoint a;
+insert into student values(4,'shenba'),(5,'jai');
+savepoint b;
+insert into student values(6,'manoj');
+savepoint c;
+insert into student values(1,'manoj'),(2,'ajay'),(3,'meenu');
+rollback b;
+
+
+commit;
+rollaback a;
+
+
+----------------------------------------------------------------------------------------
+SORTING
+---------  --> ORDERBY
+
+LIMITING -- limit,offset
+--------
+
+
+pattern Matching
+_______________________
+
+LIKE ,
+
+%  -- wild card
+_  -- it ewill take only one character
+
+a__b%
+A% -- A, Abinaya
+
+AB% -- abi, abinaya
+
+%AM --  vikram, kalam
+
+%ur% -- surya, urusala
+
+la%n -- lakshman
+
+A_i  --> abi,ani
+
+A_i% --> abi,abinaya,anitha
+
+
+Sorting
+_________
+
+select * from city;
+
+select * from city orderby population asc;
+select * from city orderby population desc;
+select * from city orderby population desc limit 10;
+select * from city orderby population desc limit 10 offset 2;
+select * from city orderby population asc limit 1 offset 1;
+
+Filtering
+___________
+
+
+vertical filtering   --- fields -- projection
+horizantal filtering --- records -- selection
+
+sorting
+________
+
+Sorting: ORDERBY
+Limiting: LIMIT,OFFSET
+
+select * from city where countrycode = 'IND' orderby population desc limit 10;
+
+Pattern Matching
+____________________
+
+select * from city where name like 'k%n';
+select * from city where name like 'z%n';
+select * from city where name like 'z%';
+select * from city where name like '%n';
+
+Operat0rs
+__________
+
+
+OPERATORS
+----------
+
+1) Arithmetic -- +, -, *, /, % 
+
+2) Comparision operator -- >, <, >=, <=, !=, <>
+
+3) Logical --> and, or, not
+
+4) special operators --> in,not in, between, as, like, is , is not
+
+
+Arithmetic
+-----------
+
+
+select population from city;
+select population,population+1000 from city;
+select population,population+1000 from city as new_population from city;
+
+select 2+3 as result;
+
+
+
+Comparision operator
+-----------------------
+
+select 10<5 as result;
+
+select from city where population<200000;
+select from city where population>200000;
+select from city where population<=200000;
+select from city where population=200000;
+select from city where population!=200000;
+
+
+
+ Logical 
+---------
+and
+---
+i/p1   i/p2   o/p
+t       t      t
+t       f      f
+f       t      f
+f       f      f
+or
+--
+i/p1   i/p2   o/p
+t       t      t
+t       f      t
+f       t      t
+f       f      f
+
+not operator
+-------------
+t-->f
+f-->t
+
+
+
+select 10>5 and 6>5 as result;
+select 10>5 or 6<5 as result;
+select not 10>5 result;
+
+select * from city countrycode = 'IND' and population>2000000;
+select * from city countrycode = 'IND' or population>2000000;
+select * from city not countrycode = 'IND' and population>2000000;
+select * from city not(countrycode = 'IND' or population>2000000);
+
+
+
+special operators
+------------------
+
+select 10 in (5,6,7,8,9,2,3,10)
+select 10 not in (5,6,7,8,9,2,3,10)
+
+select * from city where countrycode in ('IND','PAK','AFG');
+
+(or)
+
+select * from city where countrycode ='IND'or countrycode = 'PAK'or countrycode = 'AFG';
+
+select * from city where countrycode not in ('IND','PAK','AFG');
+
+select 10 between 0 and 20;
+
+select * from where population between 1000000 and 2000000;
+select * from city where population>=10000000 and population<=2000000;
+
+select * from country;
+
+selct * from country where indepyear  is null;
+selct * from country where indepyear  is not null;
+
+----------------------------------------------------------------------------------------
+OPERATORS
+----------
+
+1) Arithamtic -- +, -, *, /, % 
+
+2) Comparision operator -- >, <, >=, <=, !=, <>
+
+3) Logical --> and, or, not
+
+4) special operators --> in,not in, between, as, like, is , is not
+
+
+Arithamtic
+-----------
+
+
+select population from city;
+select population,population+1000 from city;
+select population,population+1000 from city as new_population from city;
+
+select 2+3 as result;
+
+
+
+Comparision operator
+-----------------------
+
+select 10<5 as result;
+
+select from city where population<200000;
+select from city where population>200000;
+select from city where population<=200000;
+select from city where population=200000;
+select from city where population!=200000;
+
+
+
+ Logical 
+---------
+
+select 10>5 and 6>5 as result;
+select 10>5 or 6<5 as result;
+select not 10>5 result;
+
+select * from city countrycode = 'IND' and population>2000000;
+select * from city countrycode = 'IND' or population>2000000;
+select * from city not countrycode = 'IND' and population>2000000;
+select * from city not(countrycode = 'IND' or population>2000000);
+
+
+
+special operators
+------------------
+
+select 10 in (5,6,7,8,9,2,3,10)
+select 10 not in (5,6,7,8,9,2,3,10)
+
+select * from city where countrycode in ('IND','PAK','AFG');
+
+(or)
+
+select * from city where countrycode ='IND'or countrycode = 'PAK'or countrycode = 'AFG';
+
+select * from city where countrycode not in ('IND','PAK','AFG');
+
+select 10 between 0 and 20;
+
+select * from city where population between 1000000 and 2000000;
+select * from city where population>=10000000 and population<=2000000;
+
+select * from country;
+
+selct * from country where indepyear  is null;
+selct * from country where indepyear  is not null;
+---------------------------------------------------------------------------------------
+FUNCTIONS
+_____________
+
+
+
+1)single row fucntion  -- each and every row will be handled
+
+2)multi row function (or) Aggrigate function -- all rows will hadled together and output will be a single output
+
+
+
+String function 
+Math function
+Date function
+-----------------------------------------------------------------------------------------
+string functions
+-----------------
+
+select upper('apple') as result;
+select name,upper(name) from city;  --> single row function
+select name,lower(name) from city;
+select name,reverse(name) from city;
+select concat (id,name) as adderss from city;
+
+
+Math functions
+---------------
+
+select round(lifeexpectancy) from country;  --> multi row functions
+select round(lifeexpectancy,2) from country;
+select max(population) from city;
+select min(population) from city;
+select sum(population) from city where country = 'IND';
+select avg(population) from city where country = 'IND';
+select count(population) from city;
+select sum(population)/count(population) ,avg(population) from city;
+select count(*) from country;
+select count(indepyear) from country;
+select continent from country;
+select distinct continent from country;
+select count(continent) from country;
+select count(distinct continent) from country;  --> remove duplicate
+
+select * from countrylanguage;
+select percentage, round(percentage) from countrylanguage;
+select percentage, round(percentage), ceil(percentage), floor(percentage) from countrylanguage;
+
+select round(1234.6567);
+select round(1234.6567, 2);  --> 1234.68
+select truncate(1234.6567);  --> 1234.67
+
+
+
+Date functions
+---------------
+
+select current-time();
+select day(current_date());
+select dayname(current_date());
+select dayofyear(current_date());
+select datediff('2024-11-30','1997-07-30');
+
+-----------------------------------------------------------------------------------------
+case function
+----------------
+
+select * from city;
+
+select name,population,
+   case
+     when age>18 then 'evote'
+     when age>10 and age<17 then 'will vote shortly'
+     else 'small'
+   end as city_size
+from city;
+
+
+
+views
+------
+
+create view  "viewname' as (selectquery)
+
+
+complex query
+security
+code reusability
+
+
+
+select * from city where countrycode = 'IND';
+
+create view india as select * from city where countrycode = 'IND';
+
+select * fron india;
+
+
+
+GRUOP BY
+_________
+GROUPBY
+
+
+HAVING -- individual groups filtering
+       we use aggregate functions
+       slect gorupby
+       post flitering
+       
+
+
+WHERE -- Individual rows filtering
+
+-- select,update ,delete, pre filter
+
+
+select * from city;
+
+select countrycode,sum(population) from city where country = 'IND';
+
+select countrycode,sum(population) from city group by countrycode;
+
+select continent from country group by continent;
+
+select continent,sum(population) from country group by continent;
+
+use world;
+
+select * from country;
+
+select region from country where continent = 'Asia';
+select name from country where continent = 'Asia';
+select count(name) from country where continent = 'Asia';
+select continent,count(name) from country group by continent;
+select continent,sum(name) from country group by continent;
+
+select distinct region from country where continent = 'Asia';
+select continent,count(population) from country group by continent;
+select continent,count(name) from country group by continent;
+
+
+HAVING
+________
+
+
+select continent,count(name) from country group by continent having count(name)>20;
+
+
+
+SUB-QUERY  --> query within query
+__________
+
+sub_query
+-------------
+query within a query
+
+1) single row query
+2) multi row query
+
+select * from city;
+
+select * from city where district = 'Tamil nadu';
+select * from city where name = 'madurai';
+select max(population) from city;
+select * from city where population = 10500000;
+(or)
+select * from city where population = (select max(population) from city);  ----> single row output subquery
+
+
+select district from city where countrycode = 'IND';
+
+select *  city where district in ( select district from city where countrycode = 'IND');  ----> muliti row output subquery
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+JOIN
+_________
+
+use demo;
+
+
+create table(
+        id int,
+        name varchar(15)
+);
+create table student(
+	id int,
+	name varchar(20),
+        dept_id int
+);
+
+
+insert into department values (101,'maths'),(102,'Biology'),(103,'computer'),(104,'chemistry');
+select * from department;
+
+insert into student values (1,'Raj',101),(2,'Vijay',102),(3,'Ajay',104),(4,'meenu',105);
+select * from student;
+
+
+mysql commendline
+_____________________
+
+use demo;
+select * from student;
+select * from department;
+
+
+mysql workbench
+________________
+
+JOIN
+-----
+to join two tables records using attributes.
+common fields
+TYPES
+-----
+1.inner join/join
+2.left join
+3.right join
+4.cross join
+5.full outer join
+6.self join
+
+
+use demo;
+
+select student.id, student.name, student.dept_id, 
+department.id, department.name
+from student 
+join department 
+on student.dept_id = department.id;
+
+
+
+INNER JOIN
+-----------
+
+select student.id, student.name, student.dept_id, department.id, department.name
+from student 
+inner join department
+on student.dept_id = department.id;
+
+
+
+
+LEFT JOIN
+----------
+
+select student.id, student.name, student.dept_id, department.id, department.name
+from student 
+left join department
+on student.dept_id = department.id;
+
+
+
+
+RIGHT JOIN
+------------
+
+select *
+from student 
+right join department
+on student.dept_id = department.id;
+
+
+
+
+UNION
+------
+
+select * 
+from 
+  student as s
+left join
+  department as d
+on
+  s.dept_id = d.id
+
+union 
+
+select * 
+from 
+  student as s
+right join
+  department as d
+on
+  s.dept_id = d.id
+
+
+
